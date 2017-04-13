@@ -99,10 +99,6 @@ $invNumber = $_GET['invSearchBox'];
 
 $query = "SELECT * FROM Invoice_Details_TablE WHERE InvoiceNumber = '$invNumber';";
 
-
-
-
-
 $details = $db->query($query);
 ?>
 
@@ -115,10 +111,6 @@ $details = $db->query($query);
     <th>Quantity</th>
   </tr>
 <?php 
-
-
-
-
 
 	foreach ( $details as $detail){
 		?>
@@ -134,44 +126,45 @@ $details = $db->query($query);
  
 	<?php }  echo '</table>'; } ?>
 
-	
-<?php  //Logic for delete        $forDelete = $detail['InvoiceNumber']; ?>
-		
+			
 <?php
 
 
 
 
 
+//delet logic
 if (isset($_GET['delete']) && isset($_GET['invSearchBox'])){
 	
-	//isset($forDelete)
-	
 	$invNumber = $_GET['invSearchBox'];
+	 
+	//Check if data exists
+	$query = "SELECT * FROM Invoice_Header_Table WHERE InvoiceNumber = '$invNumber';";
 	
-	$query = "SELECT * FROM Invoice_Details_TablE WHERE InvoiceNumber = '$invNumber';";
-	
-	
+	$result = $db->exec($query);
 
+	//echo $result['InvoiceNumber'];
+	//foreach ($results as $result){
+	if ($result['InvoiceNumber'] == $invNumber) {
+	
+//courseerra
+//edx	
 		
-		//echo $detail['InvoiceNumber'];
-		
-		//$forDelete = $detail['InvoiceNumber'];
-	
-	
-	
-		$query = "DELETE FROM Invoice_Details_TablE WHERE InvoiceNumber = '$invNumber';";
+	$query = "DELETE FROM Invoice_Header_Table WHERE InvoiceNumber = '$invNumber' OR CustomerName = '$invNumber';";
 	
 	$db->exec($query);
 	
-	$query = "DELETE FROM Invoice_Header_Table WHERE InvoiceNumber = '$invNumber';";
+	$Results = '<br><span class = "Success" >Sucessfully Deleted ' . $invNumber. '.</span>';
+	echo $Results;
 	
-	$db->exec($query);
+} else {
+	$Results = '<br><span class = "Warning" >No results matching ' . $invNumber. '.</span>';
 	
-	}
+	echo $Results;
+//}
+}
+}
 
-
-echo '';
 /*
  * include end structure
  */

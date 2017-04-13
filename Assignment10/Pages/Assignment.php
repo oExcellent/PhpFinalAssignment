@@ -152,6 +152,7 @@ quantity VARCHAR(30) NOT NULL,
 price VARCHAR(30) NOT NULL ,
 InvoiceNumber VARCHAR(30) NOT NULL,
 FOREIGN KEY (InvoiceNumber) REFERENCES Invoice_Header_Table(InvoiceNumber)
+ON DELETE CASCADE ON UPDATE CASCADE
 );";
 	
 	$db->exec($query);

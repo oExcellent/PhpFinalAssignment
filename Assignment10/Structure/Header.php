@@ -14,7 +14,7 @@
 
     <style>
     #ht{
-    color: white;
+    color: pink;
     text-align: center;
     }
     body{
@@ -157,7 +157,7 @@ css form stuff
 }
  .myFormArea input[type="text"], .myFormArea select {
 	border: none;
-	color: #ADD8E6;
+	color: pink;
 	height: 25px;
 	line-height:15px;
 	margin-bottom: 16px;
@@ -174,7 +174,7 @@ css form stuff
 }
 .active input[type="text"]{
 	border: none;
-	color: #ADD8E6;
+	color: pink;
 	height: 25px;
 	line-height:15px;
 	margin-bottom: 16px;
@@ -367,6 +367,18 @@ css form stuff
 	}
 
 }
+.Warning{
+color: yellow;
+}
+
+.Success{
+color: green;
+}
+
+.Success, Warning{
+text-align: center;
+padding-left:30%;
+}
 
     </style>
 </head>
@@ -386,12 +398,9 @@ css form stuff
 
 </nav>
 
-
-<body>
 <header>
     <h1 id="ht"><?php echo $header?></h1>
 </header>
 
-
-
+<body>
 <main>

@@ -10,7 +10,7 @@
 					·
 					<a href="Search.php">Manage Invoices</a>
 					·
-					<a href="#ht"> <img src="../Assets/top.png" alt ="back 2 top image" height = "10" width= "10"></a
+					<a href="#ht"> <img src="../Assets/top.png" alt ="back 2 top image" height = "10" width= "10"></a>
 					·
 					 <a href="mailto:waltm3@mail.broward.edu">Contact us</a>
 				</p>
@@ -23,7 +23,7 @@
 
 				
 				<form method ="GET" Action="Search.php">
-<input type ="text" name ="invSearchBox" id="invSearchBox" placeholder="Search..">
+<input type ="text" name ="invSearchBox"  placeholder="Search..">
 <input type ="submit" value ="LookUp" name ="Search" style="position: absolute; left: -9999px">
 
 
