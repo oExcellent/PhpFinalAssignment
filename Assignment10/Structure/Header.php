@@ -88,9 +88,9 @@ li:last-child {
 
 #AddInvoiceDetals{
 position: absolute;
-left:55%;
+left:39%;
 
-top: 22%;
+top: 28%;
  opacity: 0.8;
 }
 
